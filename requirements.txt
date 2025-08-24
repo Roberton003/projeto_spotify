@@ -1,0 +1,9 @@
+requests
+plotly[express]
+numpy
+pandas
+python-dotenv
+jsonschema
+pytest
+pyarrow
+prometheus_client

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+env/
+
+# Data
+data/raw/
+data/processed/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Env variants
+.env.local
+.env.*
+.secrets

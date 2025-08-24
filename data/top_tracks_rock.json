@@ -1,0 +1,702 @@
+[
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Heart",
+    "popularidade": 36,
+    "preview_url": null,
+    "id": "5CqWvv4ebi73LPeUGzzMSP"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Wasted Days and Wasted Nights",
+    "popularidade": 34,
+    "preview_url": null,
+    "id": "6ymvyGUlf6a2cyqLZ1c40e"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Don't Forget To Remember",
+    "popularidade": 26,
+    "preview_url": null,
+    "id": "3egJgdSg6aUWVhf9hbDF48"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Honkytonk Angels (feat. Joanna Field)",
+    "popularidade": 22,
+    "preview_url": null,
+    "id": "4Qq3mof1TKgWiRd3jYtxpx"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Cry to Me",
+    "popularidade": 21,
+    "preview_url": null,
+    "id": "2YOhSP75nYAkDWhAGBvTOe"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Just A Closer Walk With Thee",
+    "popularidade": 10,
+    "preview_url": null,
+    "id": "0uiSMoO3h6wyeAxyoIWqQc"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Heart",
+    "popularidade": 17,
+    "preview_url": null,
+    "id": "5v9DvvnWnVYpNF8HI6yCKk"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Shame on Me",
+    "popularidade": 17,
+    "preview_url": null,
+    "id": "6qcP65jB0TJFwB3aZYBcuK"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Bye Bye Love (feat. Matt Hurter)",
+    "popularidade": 14,
+    "preview_url": null,
+    "id": "0fDQ1vzro43IDLtZKd95Jl"
+  },
+  {
+    "artista": "Gene Rockwell",
+    "musica": "Jesus Sweet Jesus - My Life's In Good Hands",
+    "popularidade": 5,
+    "preview_url": null,
+    "id": "33ji3SeUOBiwGF75JTTw43"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Touch me",
+    "popularidade": 27,
+    "preview_url": null,
+    "id": "0qylf8OFOMUyVgao81ENFq"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Star Line (GRHN Mix)",
+    "popularidade": 22,
+    "preview_url": null,
+    "id": "1K4N9LhNW3tvhu0sA99HqO"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Revive",
+    "popularidade": 21,
+    "preview_url": null,
+    "id": "1ezG3bvNptvtNMfB3Z7yI1"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "make.believe",
+    "popularidade": 20,
+    "preview_url": null,
+    "id": "5Pz0YJuwIodU0qIg2kjgo2"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Curiosity",
+    "popularidade": 19,
+    "preview_url": null,
+    "id": "6dNnjnM1l7UB70WBkCXPtg"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Touch me (kz Mix)",
+    "popularidade": 19,
+    "preview_url": null,
+    "id": "6NXualMd9afwegt1V4sJ5h"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Reaching for the stars",
+    "popularidade": 17,
+    "preview_url": null,
+    "id": "6O9w7jKjbbF0UxWKSmkk1g"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Crystalfall",
+    "popularidade": 17,
+    "preview_url": null,
+    "id": "4nSwGyOZHtFlqC60qNttb0"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Maker",
+    "popularidade": 15,
+    "preview_url": null,
+    "id": "42C2nNEayzwMxS8A9VRWYH"
+  },
+  {
+    "artista": "Genki Rockets",
+    "musica": "Wonderland",
+    "popularidade": 15,
+    "preview_url": null,
+    "id": "0SxLPg4IQ04aNI9cwGAS07"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "In the End",
+    "popularidade": 92,
+    "preview_url": null,
+    "id": "60a0Rd6pjrkxjPbaKzXjfq"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Numb",
+    "popularidade": 91,
+    "preview_url": null,
+    "id": "2nLtzopw4rPReszdYBJU6h"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "The Emptiness Machine",
+    "popularidade": 85,
+    "preview_url": null,
+    "id": "1EDPVGbyPKJPeGqATwXZvN"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Faint",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "4Yf5bqU3NK4kNOypcrLYwU"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Somewhere I Belong",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "3fjmSxt0PskST13CSdBUFx"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "What I've Done",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "18lR4BzEs7e3qzc0KVkTpU"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "One Step Closer",
+    "popularidade": 86,
+    "preview_url": null,
+    "id": "3K4HG9evC7dg3N0R9cYqk4"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Heavy Is the Crown",
+    "popularidade": 82,
+    "preview_url": null,
+    "id": "2HBBM75Xv3o2Mqdyh1NcM0"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Crawling",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "57BrRMwf9LrcmuOsyGilwr"
+  },
+  {
+    "artista": "Linkin Park",
+    "musica": "Up From the Bottom",
+    "popularidade": 78,
+    "preview_url": null,
+    "id": "2SwdMXPvGdciXamSjfoNH9"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Zóio De Lula",
+    "popularidade": 74,
+    "preview_url": null,
+    "id": "0AsfpL8bzbmEyJsfbPPYnj"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Só Os Loucos Sabem",
+    "popularidade": 74,
+    "preview_url": null,
+    "id": "3nI0piSOxAik2RCpHGloB7"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Céu Azul",
+    "popularidade": 73,
+    "preview_url": null,
+    "id": "3cqeso9qMA6HoISorEoFfk"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Dias De Luta, Dias De Gloria",
+    "popularidade": 74,
+    "preview_url": null,
+    "id": "006pMMCuRo2TFjh8sNGSov"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Ela Vai Voltar (Todos Os Defeitos De Uma Mulher Perfeita)",
+    "popularidade": 73,
+    "preview_url": null,
+    "id": "70dJEanFPdYuWZumkrnKeX"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Lugar Ao Sol",
+    "popularidade": 73,
+    "preview_url": null,
+    "id": "4gEFeIEORz8thfqMY7nKcb"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Como Tudo Deve Ser",
+    "popularidade": 72,
+    "preview_url": null,
+    "id": "3QI5bIozef0HZ1kJnA2RdT"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Meu Novo Mundo",
+    "popularidade": 72,
+    "preview_url": null,
+    "id": "0LDT8QEHbPA0aawzm9CWP7"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Pontes Indestrutíveis",
+    "popularidade": 70,
+    "preview_url": null,
+    "id": "74Es0YAvJFbFCZ6ULMcydb"
+  },
+  {
+    "artista": "Charlie Brown Jr.",
+    "musica": "Céu Azul - Ao Vivo",
+    "popularidade": 70,
+    "preview_url": null,
+    "id": "1z1EeTXwnz3gvoUvzvkkdw"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Believer",
+    "popularidade": 90,
+    "preview_url": null,
+    "id": "0pqnGHJpmpxLKifKRmU6WP"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Demons",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "5qaEfEh1AtSdrdrByCP7qR"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Thunder",
+    "popularidade": 89,
+    "preview_url": null,
+    "id": "1zB4vmk8tFRmM9UULNzbLB"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Bones",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "54ipXppHLA8U4yqpOFTUhr"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Radioactive",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "62yJjFtgkhUrXktIoSjgP2"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Whatever It Takes",
+    "popularidade": 86,
+    "preview_url": null,
+    "id": "6Qn5zhYkTa37e91HC1D7lb"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Enemy (with JID) - from the series Arcane League of Legends",
+    "popularidade": 83,
+    "preview_url": null,
+    "id": "3CIyK1V4JEJkg02E4EJnDl"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Bad Liar",
+    "popularidade": 85,
+    "preview_url": null,
+    "id": "2RSHsoi04658QL5xgQVov3"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "Natural",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "2FY7b99s15jUprqC0M5NCT"
+  },
+  {
+    "artista": "Imagine Dragons",
+    "musica": "On Top Of The World",
+    "popularidade": 81,
+    "preview_url": null,
+    "id": "213x4gsFDm04hSqIUkg88w"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Payphone",
+    "popularidade": 88,
+    "preview_url": null,
+    "id": "1XGmzt0PVuFgQYYnV2It7A"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Moves Like Jagger - Studio Recording From \"The Voice\" Performance",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "7pYfyrMNPn3wtoCyqcTVoI"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "She Will Be Loved - Radio Mix",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "4llK75pXNWZz6KAho2Gp16"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Maps",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "4gbVRS8gloEluzf0GzDOFc"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "This Love",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "6ECp64rv50XVz93WvxXMGF"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Animals",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "2bL2gyO6kBdLkNSkxXNh6x"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Sugar",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "2iuZJX9X9P0GKaE93xcPjk"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Memories",
+    "popularidade": 86,
+    "preview_url": null,
+    "id": "4cktbXiXOapiLBMprHFErI"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "One More Night",
+    "popularidade": 83,
+    "preview_url": null,
+    "id": "6cpk00i5TxCqSeqNi2HuIe"
+  },
+  {
+    "artista": "Maroon 5",
+    "musica": "Priceless (feat. LISA)",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "5MI9rnOsAayuxi7pKVydNg"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "I Wanna Be Yours",
+    "popularidade": 94,
+    "preview_url": null,
+    "id": "5XeFesFbtLpXzIVDNQP22n"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "505",
+    "popularidade": 89,
+    "preview_url": null,
+    "id": "0BxE4FqsDD1Ot4YuBXwAPp"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "No. 1 Party Anthem",
+    "popularidade": 90,
+    "preview_url": null,
+    "id": "5TTGoX70AFrTvuEtqHK37S"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Do I Wanna Know?",
+    "popularidade": 90,
+    "preview_url": null,
+    "id": "5FVd6KXrgO9B3JPmC8OPst"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Why'd You Only Call Me When You're High?",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "086myS9r57YsLbJpU0TgK9"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "R U Mine?",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "2AT8iROs4FQueDv2c8q2KE"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Fluorescent Adolescent",
+    "popularidade": 80,
+    "preview_url": null,
+    "id": "2x8evxqUlF0eRabbW2JBJd"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Snap Out Of It",
+    "popularidade": 82,
+    "preview_url": null,
+    "id": "0NdTUS4UiNYCNn5FgVqKQY"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Arabella",
+    "popularidade": 79,
+    "preview_url": null,
+    "id": "7nzsY8vlnKdvGOEE0rjAXZ"
+  },
+  {
+    "artista": "Arctic Monkeys",
+    "musica": "Knee Socks",
+    "popularidade": 79,
+    "preview_url": null,
+    "id": "2LGdO5MtFdyphi2EihANZG"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Can't Stop",
+    "popularidade": 89,
+    "preview_url": null,
+    "id": "3ZOEytgrvLwQaqXreDs2Jx"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Californication",
+    "popularidade": 88,
+    "preview_url": null,
+    "id": "48UPSzbZjgc449aqz8bxox"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Scar Tissue",
+    "popularidade": 88,
+    "preview_url": null,
+    "id": "1G391cbiT3v3Cywg8T7DM1"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Under the Bridge",
+    "popularidade": 88,
+    "preview_url": null,
+    "id": "3d9DChrdc6BOeFsbrZ3Is0"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Otherside",
+    "popularidade": 86,
+    "preview_url": null,
+    "id": "64BbK9SFKH2jk86U3dGj2P"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Dani California",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "10Nmj3JCNoMeBQ87uw5j8k"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Snow (Hey Oh)",
+    "popularidade": 83,
+    "preview_url": null,
+    "id": "2aibwv5hGXSgw7Yru8IYTO"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "By the Way",
+    "popularidade": 81,
+    "preview_url": null,
+    "id": "1f2V8U1BiWaC9aJWmpOARe"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "Dark Necessities",
+    "popularidade": 80,
+    "preview_url": null,
+    "id": "2oaK4JLVnmRGIO9ytBE1bt"
+  },
+  {
+    "artista": "Red Hot Chili Peppers",
+    "musica": "The Zephyr Song",
+    "popularidade": 79,
+    "preview_url": null,
+    "id": "1ndGB6rvxKYN9seCYO1dTF"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Tempo Perdido",
+    "popularidade": 77,
+    "preview_url": null,
+    "id": "7MnT7msJZg3XBAS0OTfGrB"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Será",
+    "popularidade": 72,
+    "preview_url": null,
+    "id": "7hkQhMFq4EOTYwX3I7cgmA"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Pais E Filhos",
+    "popularidade": 70,
+    "preview_url": null,
+    "id": "46s6p0tsgRBfzWriIg3w9o"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Eduardo E Mônica",
+    "popularidade": 70,
+    "preview_url": null,
+    "id": "6Pa6VpdGS8OfiVOEnNAHHw"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Quase Sem Querer",
+    "popularidade": 69,
+    "preview_url": null,
+    "id": "2Pr6qNmiOxTdo8B6bs8x8x"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Ainda É Cedo",
+    "popularidade": 65,
+    "preview_url": null,
+    "id": "7uscfoAoI65JcSY4NyHg1t"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Faroeste Caboclo",
+    "popularidade": 65,
+    "preview_url": null,
+    "id": "6ttKOudrrD5yjt4saUjhNa"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Que Pais É Este",
+    "popularidade": 61,
+    "preview_url": null,
+    "id": "1bqRtNOcT1QiV1j87IoATA"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Quando O Sol Bater Na Janela Do Teu Quarto",
+    "popularidade": 62,
+    "preview_url": null,
+    "id": "4ILX2CDYdkqIqiVsIDE0Yy"
+  },
+  {
+    "artista": "Legião Urbana",
+    "musica": "Hoje A Noite Não Tem Luar (Hoy Me Voy Para México) - Ao Vivo Em São Paulo / 1999",
+    "popularidade": 62,
+    "preview_url": null,
+    "id": "0dHTMMFAzlk164gZ7YB1rG"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Sweet Child O' Mine",
+    "popularidade": 91,
+    "preview_url": null,
+    "id": "7snQQk1zcKl8gZ92AnueZW"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Welcome To The Jungle",
+    "popularidade": 87,
+    "preview_url": null,
+    "id": "0G21yYKMZoHa30cYVi1iA8"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Paradise City",
+    "popularidade": 85,
+    "preview_url": null,
+    "id": "6eN1f9KNmiWEhpE2RhQqB5"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "November Rain",
+    "popularidade": 85,
+    "preview_url": null,
+    "id": "3YRCqOhFifThpSRFJ1VWFM"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Knockin' On Heaven's Door",
+    "popularidade": 84,
+    "preview_url": null,
+    "id": "4JiEyzf0Md7KEFFGWDDdCr"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Don't Cry (Original)",
+    "popularidade": 82,
+    "preview_url": null,
+    "id": "2N2yrmodOnVF10mKvItC9P"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Patience",
+    "popularidade": 77,
+    "preview_url": null,
+    "id": "1OEoNpiyqBghuEUaT6Je6U"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Live And Let Die",
+    "popularidade": 76,
+    "preview_url": null,
+    "id": "0rFWuqFgHAfuzE8uSB9TWR"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "You Could Be Mine",
+    "popularidade": 75,
+    "preview_url": null,
+    "id": "0dlTGl67UFWcKupzkxZYOn"
+  },
+  {
+    "artista": "Guns N' Roses",
+    "musica": "Civil War",
+    "popularidade": 75,
+    "preview_url": null,
+    "id": "6i4Qi1mJxXjqNIL9HfJhRs"
+  }
+]

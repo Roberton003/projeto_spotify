@@ -1,0 +1,35 @@
+{
+  "external_urls": {
+    "spotify": "https://open.spotify.com/artist/51Blml2LZPmy7TTiAg47vQ"
+  },
+  "followers": {
+    "href": null,
+    "total": 13349111
+  },
+  "genres": [
+    "rock"
+  ],
+  "href": "https://api.spotify.com/v1/artists/51Blml2LZPmy7TTiAg47vQ",
+  "id": "51Blml2LZPmy7TTiAg47vQ",
+  "images": [
+    {
+      "url": "https://i.scdn.co/image/ab6761610000e5ebe62be215d2ee31bcd97edaba",
+      "height": 640,
+      "width": 640
+    },
+    {
+      "url": "https://i.scdn.co/image/ab67616100005174e62be215d2ee31bcd97edaba",
+      "height": 320,
+      "width": 320
+    },
+    {
+      "url": "https://i.scdn.co/image/ab6761610000f178e62be215d2ee31bcd97edaba",
+      "height": 160,
+      "width": 160
+    }
+  ],
+  "name": "U2",
+  "popularity": 80,
+  "type": "artist",
+  "uri": "spotify:artist:51Blml2LZPmy7TTiAg47vQ"
+}
