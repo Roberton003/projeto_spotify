@@ -1,10 +1,11 @@
-import subprocess
-import os
 import argparse
 import getpass
-from typing import Optional
-import requests
 import json
+import os
+import subprocess
+from typing import Optional
+
+import requests
 
 
 def run_command(command: list[str], cwd: Optional[str] = None, input_data: Optional[str] = None):
@@ -36,7 +37,8 @@ def run_command(command: list[str], cwd: Optional[str] = None, input_data: Optio
             print(f"Stderr: {stderr}")
             raise
     except FileNotFoundError:
-        print(f"Erro: Comando '{command[0]}' não encontrado. Certifique-se de que o Git está instalado e no PATH.")
+        print(
+            f"Erro: Comando '{command[0]}' não encontrado. Certifique-se de que o Git está instalado e no PATH.")
         raise
 
 
@@ -69,15 +71,18 @@ def create_github_repository(repo_name: str, github_token: str, github_username:
 
     print(f"Tentando criar o repositório '{repo_name}' no GitHub...")
     try:
-        response = requests.post("https://api.github.com/user/repos", headers=headers, data=json.dumps(data))
+        response = requests.post(
+            "https://api.github.com/user/repos", headers=headers, data=json.dumps(data))
         response.raise_for_status()
         repo_info = response.json()
-        print(f"Repositório '{repo_name}' criado com sucesso! URL: {repo_info['html_url']}")
+        print(
+            f"Repositório '{repo_name}' criado com sucesso! URL: {repo_info['html_url']}")
         return repo_info['html_url']
     except requests.exceptions.HTTPError as e:
         resp = e.response
         if resp is not None and resp.status_code == 422 and "name already exists on this account" in resp.text:
-            print(f"Aviso: Repositório '{repo_name}' já existe na sua conta do GitHub. Prosseguindo...")
+            print(
+                f"Aviso: Repositório '{repo_name}' já existe na sua conta do GitHub. Prosseguindo...")
             return f"https://github.com/{github_username}/{repo_name}.git"
         else:
             print(f"Erro ao criar repositório no GitHub: {e}")
@@ -96,14 +101,17 @@ def automate_github_push():
     print(f"\n--- Iniciando automação Git no diretório: {project_root} ---")
 
     # Suporta passagem do token via ENV, argumento --token ou prompt seguro (getpass)
-    parser = argparse.ArgumentParser(description="Automatiza commit e push para GitHub (interativo)")
-    parser.add_argument("--token", help="Personal Access Token do GitHub. Se ausente, será lido da variável GITHUB_TOKEN ou por prompt seguro.")
+    parser = argparse.ArgumentParser(
+        description="Automatiza commit e push para GitHub (interativo)")
+    parser.add_argument(
+        "--token", help="Personal Access Token do GitHub. Se ausente, será lido da variável GITHUB_TOKEN ou por prompt seguro.")
     args, remaining = parser.parse_known_args()
 
     github_token = args.token or os.environ.get("GITHUB_TOKEN")
     if not github_token:
         try:
-            github_token = getpass.getpass(prompt="Digite seu GitHub Personal Access Token (entrada oculta): ")
+            github_token = getpass.getpass(
+                prompt="Digite seu GitHub Personal Access Token (entrada oculta): ")
         except Exception:
             github_token = None
 
@@ -115,7 +123,8 @@ def automate_github_push():
         github_username = get_github_username(github_token)
         print(f"Autenticado como usuário GitHub: {github_username}")
     except Exception as e:
-        print(f"Não foi possível obter o nome de usuário do GitHub. Verifique seu PAT e conexão. Erro: {e}")
+        print(
+            f"Não foi possível obter o nome de usuário do GitHub. Verifique seu PAT e conexão. Erro: {e}")
         return
 
     # 1. Verificar status do Git
@@ -132,34 +141,42 @@ def automate_github_push():
             return
 
     # Perguntar o nome do repositório GitHub
-    repo_name = input(f"\nDigite o nome do repositório GitHub a ser criado/usado (sugestão: {project_name}): ")
+    repo_name = input(
+        f"\nDigite o nome do repositório GitHub a ser criado/usado (sugestão: {project_name}): ")
     if not repo_name:
         repo_name = project_name
 
     # Perguntar se o repositório deve ser privado
-    is_private_str = input(f"Deseja que o repositório '{repo_name}' seja privado? (s/n, padrão: n): ")
+    is_private_str = input(
+        f"Deseja que o repositório '{repo_name}' seja privado? (s/n, padrão: n): ")
     is_private = is_private_str.lower() == 's'
 
     # Tentar criar o repositório no GitHub
     try:
-        github_repo_url = create_github_repository(repo_name, github_token, github_username, is_private)
+        github_repo_url = create_github_repository(
+            repo_name, github_token, github_username, is_private)
     except Exception as e:
-        print(f"Não foi possível criar ou verificar o repositório no GitHub. Erro: {e}")
+        print(
+            f"Não foi possível criar ou verificar o repositório no GitHub. Erro: {e}")
         return
 
     # Check for pending changes
-    status_output = subprocess.run(["git", "status", "--porcelain"], cwd=project_root, capture_output=True, text=True).stdout.strip()
+    status_output = subprocess.run(["git", "status", "--porcelain"],
+                                   cwd=project_root, capture_output=True, text=True).stdout.strip()
 
     if status_output:
         # 2. Adicionar todos os arquivos ao stage
         print("\n2. Adicionando todos os arquivos modificados/novos ao stage...")
         run_command(["git", "add", "."], cwd=project_root)
-        run_command(["git", "status"], cwd=project_root) # Mostrar o que foi adicionado
+        # Mostrar o que foi adicionado
+        run_command(["git", "status"], cwd=project_root)
 
         # 3. Solicitar mensagem de commit
-        commit_message = input("\n3. Digite a mensagem do commit (obrigatório): ")
+        commit_message = input(
+            "\n3. Digite a mensagem do commit (obrigatório): ")
         while not commit_message:
-            commit_message = input("A mensagem do commit não pode ser vazia. Digite a mensagem do commit: ")
+            commit_message = input(
+                "A mensagem do commit não pode ser vazia. Digite a mensagem do commit: ")
 
         print(f"Realizando commit com a mensagem: '{commit_message}'...")
         run_command(["git", "commit", "-m", commit_message], cwd=project_root)
@@ -176,30 +193,37 @@ def automate_github_push():
 
     # Adicionar o repositório remoto
     print(f"Adicionando repositório remoto: {github_repo_url}...")
-    run_command(["git", "remote", "add", "origin", github_repo_url], cwd=project_root)
+    run_command(["git", "remote", "add", "origin",
+                github_repo_url], cwd=project_root)
 
     # 5. Enviar (push) os arquivos para o GitHub
     default_branch = "main"
-    branch_to_push = input(f"\n5. Digite o nome do branch para o push (padrão: {default_branch}): ")
+    branch_to_push = input(
+        f"\n5. Digite o nome do branch para o push (padrão: {default_branch}): ")
     if not branch_to_push:
         branch_to_push = default_branch
 
     print(f"Enviando (push) para o branch '{branch_to_push}' no GitHub...")
     try:
-        run_command(["git", "push", "-u", "origin", branch_to_push], cwd=project_root)
+        run_command(["git", "push", "-u", "origin",
+                    branch_to_push], cwd=project_root)
         print("\n--- Processo de push para o GitHub concluído com sucesso! ---")
         print(f"Seu projeto deve estar disponível em: {github_repo_url}")
     except Exception as e:
         stderr = getattr(e, 'stderr', '') or ''
         if "set the upstream branch" in stderr:
-            print(f"Erro: O branch '{branch_to_push}' não tem um upstream configurado. Tentando configurar e fazer push novamente...")
-            run_command(["git", "push", "--set-upstream", "origin", branch_to_push], cwd=project_root)
+            print(
+                f"Erro: O branch '{branch_to_push}' não tem um upstream configurado. Tentando configurar e fazer push novamente...")
+            run_command(["git", "push", "--set-upstream",
+                        "origin", branch_to_push], cwd=project_root)
             print("\n--- Processo de push para o GitHub concluído com sucesso! ---")
             print(f"Seu projeto deve estar disponível em: {github_repo_url}")
         else:
             print("Erro durante o push. Verifique as mensagens acima para detalhes.")
-            print("Certifique-se de que você tem permissão para fazer push e que o branch existe no remoto.")
-            print("Você pode precisar configurar suas credenciais Git ou criar o repositório no GitHub primeiro.")
+            print(
+                "Certifique-se de que você tem permissão para fazer push e que o branch existe no remoto.")
+            print(
+                "Você pode precisar configurar suas credenciais Git ou criar o repositório no GitHub primeiro.")
 
 
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
+import argparse
 import json
 import logging
 import os
-import time
-import argparse
-import sys
 import shutil
+import sys
+import time
 from datetime import datetime, timezone
 from typing import List, Optional
 
@@ -440,7 +440,8 @@ if __name__ == '__main__':
             genero = GENERO
             try:
                 cid = str(CLIENT_ID or os.getenv('SPOTIFY_CLIENT_ID') or '')
-                csecret = str(CLIENT_SECRET or os.getenv('SPOTIFY_CLIENT_SECRET') or '')
+                csecret = str(CLIENT_SECRET or os.getenv(
+                    'SPOTIFY_CLIENT_SECRET') or '')
                 if cid and csecret:
                     token = autenticar_spotify(cid, csecret)
                     genres = get_available_genres(token)
@@ -449,44 +450,59 @@ if __name__ == '__main__':
                         print('\nGeneros disponiveis:')
                         for i, g in enumerate(genres):
                             print(f"  [{i}] {g}")
-                        idx_raw = input(f'Selecione o numero do genero (enter para {GENERO}): ').strip()
+                        idx_raw = input(
+                            f'Selecione o numero do genero (enter para {GENERO}): ').strip()
                         if idx_raw != '':
                             try:
                                 idx = int(idx_raw)
                                 if 0 <= idx < len(genres):
                                     genero = genres[idx]
                                 else:
-                                    logger.info('Indice fora do range, usando default %s', GENERO)
+                                    logger.info(
+                                        'Indice fora do range, usando default %s', GENERO)
                             except ValueError:
-                                logger.info('Entrada invalida, usando default %s', GENERO)
+                                logger.info(
+                                    'Entrada invalida, usando default %s', GENERO)
                     else:
-                        genero = input(f'Genero [{GENERO}]: ').strip() or GENERO
+                        genero = input(
+                            f'Genero [{GENERO}]: ').strip() or GENERO
                 else:
                     genero = input(f'Genero [{GENERO}]: ').strip() or GENERO
             except Exception:
                 genero = input(f'Genero [{GENERO}]: ').strip() or GENERO
-            qtd_raw = input(f'Quantidade de artistas [{QTD_ARTISTAS}]: ').strip() or str(QTD_ARTISTAS)
+            qtd_raw = input(f'Quantidade de artistas [{QTD_ARTISTAS}]: ').strip() or str(
+                QTD_ARTISTAS)
             try:
                 qtd = int(qtd_raw)
             except ValueError:
-                logger.info('Entrada invalida para quantidade, usando default %s', QTD_ARTISTAS)
+                logger.info(
+                    'Entrada invalida para quantidade, usando default %s', QTD_ARTISTAS)
                 qtd = QTD_ARTISTAS
             market = input('Market (ex: BR) [BR]: ').strip() or 'BR'
-            force = input('Remover checkpoint existente e forcar reprocessamento? (s/N): ').strip().lower() in ('s', 'y')
+            force = input(
+                'Remover checkpoint existente e forcar reprocessamento? (s/N): ').strip().lower() in ('s', 'y')
             return {'genero': genero, 'qtd': qtd, 'market': market, 'force': force}
         except (EOFError, KeyboardInterrupt):
             logger.info('Entrada interativa cancelada pelo usuario')
             sys.exit(1)
 
-    parser = argparse.ArgumentParser(description='Coletor Spotify (com prompt interativo)')
+    parser = argparse.ArgumentParser(
+        description='Coletor Spotify (com prompt interativo)')
     parser.add_argument('--genero', '-g', help='Genero musical (ex: rock)')
-    parser.add_argument('--qtd', '-n', type=int, help='Quantidade de artistas a coletar')
-    parser.add_argument('--market', '-m', help='Market para top-tracks (ex: BR)')
-    parser.add_argument('--force', action='store_true', help='Remover checkpoint e forcar reprocessamento')
-    parser.add_argument('--no-interactive', action='store_true', help='Nao perguntar, usar defaults/flags')
-    parser.add_argument('--collect-all', action='store_true', help='Coletar todos os generos disponiveis (ate --qtd por genero)')
-    parser.add_argument('--batch-genres', type=int, default=0, help='Processar este numero de generos nesta execucao (rota em lista de generos)')
-    parser.add_argument('--rotation-file', default=os.path.join(DATA_DIR, 'checkpoints', 'genre_rotation.json'), help='Arquivo para guardar estado da rotacao de generos')
+    parser.add_argument('--qtd', '-n', type=int,
+                        help='Quantidade de artistas a coletar')
+    parser.add_argument(
+        '--market', '-m', help='Market para top-tracks (ex: BR)')
+    parser.add_argument('--force', action='store_true',
+                        help='Remover checkpoint e forcar reprocessamento')
+    parser.add_argument('--no-interactive', action='store_true',
+                        help='Nao perguntar, usar defaults/flags')
+    parser.add_argument('--collect-all', action='store_true',
+                        help='Coletar todos os generos disponiveis (ate --qtd por genero)')
+    parser.add_argument('--batch-genres', type=int, default=0,
+                        help='Processar este numero de generos nesta execucao (rota em lista de generos)')
+    parser.add_argument('--rotation-file', default=os.path.join(DATA_DIR, 'checkpoints',
+                        'genre_rotation.json'), help='Arquivo para guardar estado da rotacao de generos')
     args = parser.parse_args()
 
     # decidir parametros: flags > env vars/defaults > interactive
@@ -516,7 +532,8 @@ if __name__ == '__main__':
             bak = cp + '.bak'
             try:
                 shutil.move(cp, bak)
-                logger.info('Checkpoint movido para %s (forcando reprocessamento)', bak)
+                logger.info(
+                    'Checkpoint movido para %s (forcando reprocessamento)', bak)
             except Exception as e:
                 logger.warning('Falha ao mover checkpoint: %s', e)
 
@@ -527,13 +544,16 @@ if __name__ == '__main__':
         Gera um arquivo de ranking por genero em `data/processed/top_tracks_{genero}_{ts}.parquet`.
         """
         cid = str(CLIENT_ID or os.getenv('SPOTIFY_CLIENT_ID') or '')
-        csecret = str(CLIENT_SECRET or os.getenv('SPOTIFY_CLIENT_SECRET') or '')
+        csecret = str(CLIENT_SECRET or os.getenv(
+            'SPOTIFY_CLIENT_SECRET') or '')
         if not cid or not csecret:
-            raise RuntimeError('Credenciais ausentes para coletar todos generos')
+            raise RuntimeError(
+                'Credenciais ausentes para coletar todos generos')
         token = autenticar_spotify(cid, csecret)
         genres = get_available_genres(token)
         if not genres:
-            logger.warning('Nenhum genero retornado pela API; abortando coleta por generos')
+            logger.warning(
+                'Nenhum genero retornado pela API; abortando coleta por generos')
             return
         for g in genres:
             logger.info('Iniciando coleta para genero: %s', g)
@@ -543,9 +563,11 @@ if __name__ == '__main__':
                 if os.path.exists(cp):
                     try:
                         shutil.move(cp, cp + '.bak')
-                        logger.info('Checkpoint movido para %s (forcando reprocessamento)', cp + '.bak')
+                        logger.info(
+                            'Checkpoint movido para %s (forcando reprocessamento)', cp + '.bak')
                     except Exception as e:
-                        logger.warning('Falha ao mover checkpoint para genero %s: %s', g, e)
+                        logger.warning(
+                            'Falha ao mover checkpoint para genero %s: %s', g, e)
             try:
                 # coletar e processar
                 resultado = coletar_por_genero(g, max_per_genre, market)
@@ -564,21 +586,24 @@ if __name__ == '__main__':
                         except Exception:
                             continue
                 # rankear por popularidade desc
-                ranked = [r for r in ranked if r.get('popularidade') is not None]
-                ranked.sort(key=lambda x: x.get('popularidade', 0), reverse=True)
+                ranked = [r for r in ranked if r.get(
+                    'popularidade') is not None]
+                ranked.sort(key=lambda x: x.get(
+                    'popularidade', 0), reverse=True)
                 # limitar a top 20
                 ranked = ranked[:20]
                 ts = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
-                out_path = os.path.join(PROCESSED_DIR, f'top_tracks_{g}_{ts}.json')
+                out_path = os.path.join(
+                    PROCESSED_DIR, f'top_tracks_{g}_{ts}.json')
                 try:
                     with open(out_path, 'w', encoding='utf-8') as f:
                         json.dump(ranked, f, ensure_ascii=False, indent=2)
-                    logger.info('Ranking salvo: %s (top %d)', out_path, len(ranked))
+                    logger.info('Ranking salvo: %s (top %d)',
+                                out_path, len(ranked))
                 except Exception as e:
                     logger.warning('Falha ao salvar ranking para %s: %s', g, e)
             except Exception as e:
                 logger.warning('Erro no genero %s: %s', g, e)
-
 
     try:
         coletar_por_genero(genero, qtd, market)
@@ -603,8 +628,8 @@ if __name__ == '__main__':
     def _fallback_genres() -> List[str]:
         # lista com generos comuns e alguns generos brasileiros
         return [
-            'rock','pop','hiphop','electronic','jazz','classical','metal','reggae','blues','folk',
-            'country','latin','soul','punk','disco','funk','rnb','indie','dance','samba','mpb','sertanejo','forro','pagode','bossa nova'
+            'rock', 'pop', 'hiphop', 'electronic', 'jazz', 'classical', 'metal', 'reggae', 'blues', 'folk',
+            'country', 'latin', 'soul', 'punk', 'disco', 'funk', 'rnb', 'indie', 'dance', 'samba', 'mpb', 'sertanejo', 'forro', 'pagode', 'bossa nova'
         ]
 
     def run_batch_genres(batch_size: int, rotation_path: str, market: str = 'BR', force_each: bool = False):
@@ -612,7 +637,8 @@ if __name__ == '__main__':
         if batch_size <= 0:
             return
         cid = str(CLIENT_ID or os.getenv('SPOTIFY_CLIENT_ID') or '')
-        csecret = str(CLIENT_SECRET or os.getenv('SPOTIFY_CLIENT_SECRET') or '')
+        csecret = str(CLIENT_SECRET or os.getenv(
+            'SPOTIFY_CLIENT_SECRET') or '')
         genres = []
         if cid and csecret:
             try:
@@ -655,8 +681,10 @@ if __name__ == '__main__':
         # advance index
         state['index'] = (current + batch_size) % total
         _save_rotation_state(rotation_path, state)
-        logger.info('Rotacao atualizada: index=%d total_genres=%d', state['index'], total)
+        logger.info('Rotacao atualizada: index=%d total_genres=%d',
+                    state['index'], total)
 
     # se o usuario solicitou processamento em batch, executa e sai
     if args.batch_genres and args.batch_genres > 0:
-        run_batch_genres(args.batch_genres, args.rotation_file, market=market, force_each=force)
+        run_batch_genres(args.batch_genres, args.rotation_file,
+                         market=market, force_each=force)
