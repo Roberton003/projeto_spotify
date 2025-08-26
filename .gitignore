@@ -17,3 +17,6 @@ data/processed/
 .env.local
 .env.*
 .secrets
+
+# Arquivos de texto e documentação local
+post_linkedin.md

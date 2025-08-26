@@ -1,0 +1,922 @@
+
+    <html>
+    <head>
+        <title>Dashboard de Popularidade - Spotify</title>
+        <meta charset="UTF-8">
+        
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px auto;
+            font-size: 0.9em;
+            width: 95%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+    
+    </head>
+    <body>
+        <div class="container">
+            <h1>Análise de Popularidade Musical - Spotify</h1>
+            
+    <h2>Estatísticas Gerais do Projeto</h2>
+    <table class="styled-table">
+        <thead>
+            <tr><th>Métrica</th><th>Valor</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Total de Músicas no Banco de Dados</td><td>1210</td></tr>
+            <tr><td>Total de Artistas Únicos</td><td>152</td></tr>
+            <tr><td>Total de Gêneros Coletados</td><td>11</td></tr>
+            <tr><td>Primeira Coleta Registrada</td><td>2025-08-24 22:34</td></tr>
+            <tr><td>Última Coleta Registrada</td><td>2025-08-26 02:11</td></tr>
+            <tr><td>Tamanho do Banco de Dados</td><td>0.24 MB</td></tr>
+        </tbody>
+    </table>
+    
+            <hr>
+            <div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.1.0.min.js" integrity="sha256-Ei4740bWZhaUTQuD6q9yQlgVCMPBz6CZWhevDYPv93A=" crossorigin="anonymous"></script>                <div id="b5697896-6080-43f8-ae89-cc8f53ddada1" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b5697896-6080-43f8-ae89-cc8f53ddada1")) {                    Plotly.newPlot(                        "b5697896-6080-43f8-ae89-cc8f53ddada1",                        [{"hovertemplate":"G\u00eanero Musical=%{x}\u003cbr\u003ePopularidade M\u00e9dia (0-100)=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":{"dtype":"f8","bdata":"9ihcj8LVUkBSuB6F63FSQM3MzMzMHFFAw\u002fUoXI+CUEDXo3A9CldOQClcj8L1aE1A16NwPQrX4z8K16NwPQrXP+F6FK5H4co\u002fexSuR+F6hD8AAAAAAAAAAA=="},"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","orientation":"v","showlegend":false,"text":{"dtype":"f8","bdata":"9ihcj8LVUkBSuB6F63FSQM3MzMzMHFFAw\u002fUoXI+CUEDXo3A9CldOQClcj8L1aE1A16NwPQrX4z8K16NwPQrXP+F6FK5H4co\u002fexSuR+F6hD8AAAAAAAAAAA=="},"textposition":"outside","x":["pop","electronic","rock","sertanejo","pagode","forro","funk","samba","gospel","hip-hop","mpb"],"xaxis":"x","y":{"dtype":"f8","bdata":"9ihcj8LVUkBSuB6F63FSQM3MzMzMHFFAw\u002fUoXI+CUEDXo3A9CldOQClcj8L1aE1A16NwPQrX4z8K16NwPQrXP+F6FK5H4co\u002fexSuR+F6hD8AAAAAAAAAAA=="},"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"G\u00eanero Musical"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"Popularidade M\u00e9dia (0-100)"},"range":[0,100]},"coloraxis":{"colorbar":{"title":{"text":"Popularidade M\u00e9dia (0-100)"}},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"legend":{"tracegroupgap":0},"title":{"text":"Popularidade M\u00e9dia de M\u00fasicas por G\u00eanero no Brasil"},"barmode":"relative"},                        {"responsive": true}                    )                };            </script>        </div>
+            <hr>
+            <h2>Top 10 Músicas Mais Populares por Gênero</h2>
+    <h3>Electronic</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Blessings</td>
+      <td>Calvin Harris</td>
+      <td>88</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>DIA DELÍCIA</td>
+      <td>Nakama</td>
+      <td>88</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>DIA DELÍCIA</td>
+      <td>Mc Staff</td>
+      <td>88</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Something Just Like This</td>
+      <td>The Chainsmokers</td>
+      <td>88</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>party 4 u</td>
+      <td>Charli xcx</td>
+      <td>88</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Closer</td>
+      <td>The Chainsmokers</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Feel Good Inc.</td>
+      <td>Gorillaz</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>PASSO BEM SOLTO - Slowed</td>
+      <td>ATLXS</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>LUNA BALA - Slowed</td>
+      <td>Ariis</td>
+      <td>86</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>MONTAGEM XONADA</td>
+      <td>MXZI</td>
+      <td>86</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Forro</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Eu Vou na Sua Casa</td>
+      <td>Felipe Amorim</td>
+      <td>82</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Eu Vou na Sua Casa</td>
+      <td>Vitão</td>
+      <td>82</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Eu Vou na Sua Casa</td>
+      <td>BIN</td>
+      <td>82</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Eu Vou na Sua Casa</td>
+      <td>Malibu</td>
+      <td>82</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Cópia Proibida</td>
+      <td>Léo Foguete</td>
+      <td>78</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Amor Traumatizado</td>
+      <td>Felipe Amorim</td>
+      <td>77</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Mentira Estampada</td>
+      <td>Wesley Safadão</td>
+      <td>76</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Mentira Estampada</td>
+      <td>Natanzinho Lima</td>
+      <td>76</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Melzinho</td>
+      <td>Talita Mel</td>
+      <td>74</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Melzinho</td>
+      <td>Xand Avião</td>
+      <td>74</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Funk</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Tighten Up Tighter</td>
+      <td>Billy Ball & The Upsetters</td>
+      <td>8</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Instrumental #1</td>
+      <td>Richard Terry & Company</td>
+      <td>3</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Sissy Walk</td>
+      <td>Billy Ball & The Upsetters</td>
+      <td>2</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Popcorn '69</td>
+      <td>Billy Ball & The Upsetters</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Sissy Walk</td>
+      <td>Billy Ball & The Upsetters</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>BEAT REGGAE</td>
+      <td>Dj Ryan</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Deja Vu - - Mordred Remix</td>
+      <td>Mordred</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Favela Comemorando</td>
+      <td>MC Aj</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>HINO GALO RONDONENSE</td>
+      <td>DJ RAFAEL MIRANDA</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Isolation</td>
+      <td>Nascimento</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Gospel</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Angels Watching Over Me</td>
+      <td>Utica Institute Jubilee Singers</td>
+      <td>4</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>God Is All Over Me</td>
+      <td>Shackleford Singers</td>
+      <td>3</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>This Song Of Love</td>
+      <td>Middle Georgia Singing Convention No. 1</td>
+      <td>3</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Sal Got a Meatskin</td>
+      <td>Carlisle Brothers</td>
+      <td>2</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Sweeping Through The Gates</td>
+      <td>Ernest V. Stoneman and His Dixie Mountaineers</td>
+      <td>2</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Bells Of Love</td>
+      <td>Middle Georgia Singing Convention No. 1</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Ain't It a Shame</td>
+      <td>Utica Institute Jubilee Singers</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Angels Watching over Me</td>
+      <td>Utica Institute Jubilee Singers</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Balm in Gilead</td>
+      <td>Utica Institute Jubilee Singers</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Beauty And Freedom</td>
+      <td>Everson Izidoro</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Hip-hop</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Best Friend</td>
+      <td>Baby Woah</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>1099</td>
+      <td>Lord Meraki</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>15 Minutes</td>
+      <td>Rioville</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>2 Of Da Same</td>
+      <td>Dyrti San</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>24 Kara</td>
+      <td>24 Kara</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>8 Bit' Love</td>
+      <td>MistaLesta</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Are You Mad?</td>
+      <td>MistaLesta</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Are You Mad? - Extended</td>
+      <td>MistaLesta</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Bad Boy</td>
+      <td>Hakeem Paragon</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Bawti</td>
+      <td>24 Kara</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Mpb</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Cerveja, Boteco e Violão</td>
+      <td>Gabriel Fonseca</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Pagode</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>P do Pecado - Ao Vivo</td>
+      <td>Grupo Menos É Mais</td>
+      <td>85</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>P do Pecado - Ao Vivo</td>
+      <td>Simone Mendes</td>
+      <td>85</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Saudade Proibida - Ao Vivo</td>
+      <td>Simone Mendes</td>
+      <td>81</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Aquele Lugar - Ao Vivo</td>
+      <td>Grupo Menos É Mais</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Coração Partido (Corazón Partío) - Ao Vivo</td>
+      <td>Grupo Menos É Mais</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Grau de Maluca - Ao Vivo</td>
+      <td>Grupo Menos É Mais</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Me Ama Ou Me Larga - Ao Vivo</td>
+      <td>Simone Mendes</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Lapada Dela - Ao Vivo</td>
+      <td>Grupo Menos É Mais</td>
+      <td>77</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Adorei</td>
+      <td>Grupo Menos É Mais</td>
+      <td>76</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Apaguei Pra Todos - Ao Vivo</td>
+      <td>Sorriso Maroto</td>
+      <td>76</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Pop</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>BIRDS OF A FEATHER</td>
+      <td>Billie Eilish</td>
+      <td>95</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>DAISIES</td>
+      <td>Justin Bieber</td>
+      <td>95</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>WILDFLOWER</td>
+      <td>Billie Eilish</td>
+      <td>92</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>YUKON</td>
+      <td>Justin Bieber</td>
+      <td>90</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Cruel Summer</td>
+      <td>Taylor Swift</td>
+      <td>89</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>august</td>
+      <td>Taylor Swift</td>
+      <td>88</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CHIHIRO</td>
+      <td>Billie Eilish</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Die With A Smile</td>
+      <td>Bruno Mars</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Die With A Smile</td>
+      <td>Lady Gaga</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Locked out of Heaven</td>
+      <td>Bruno Mars</td>
+      <td>87</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Rock</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>I Wanna Be Yours</td>
+      <td>Arctic Monkeys</td>
+      <td>91</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Creep</td>
+      <td>Radiohead</td>
+      <td>90</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>In the End</td>
+      <td>Linkin Park</td>
+      <td>89</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Let Down</td>
+      <td>Radiohead</td>
+      <td>89</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Numb</td>
+      <td>Linkin Park</td>
+      <td>88</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Believer</td>
+      <td>Imagine Dragons</td>
+      <td>87</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Do I Wanna Know?</td>
+      <td>Arctic Monkeys</td>
+      <td>87</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>No. 1 Party Anthem</td>
+      <td>Arctic Monkeys</td>
+      <td>87</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Sweet Child O' Mine</td>
+      <td>Guns N' Roses</td>
+      <td>87</td>
+      <td>2025-08-24</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>505</td>
+      <td>Arctic Monkeys</td>
+      <td>86</td>
+      <td>2025-08-24</td>
+    </tr>
+  </tbody>
+</table><h3>Samba</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Akhi Tora Akhi Mui Rahijibi</td>
+      <td>Duleswar Tandi</td>
+      <td>12</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Aame Jeve Dekhile</td>
+      <td>Nabin Kuanr</td>
+      <td>5</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>A Revolta da Chibata | Luta, Coragem e Bravura! João Cândido, Um Sonho de Liberdade</td>
+      <td>A.C.S.M.E.S.M. Camisa Verde Branco</td>
+      <td>3</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Aaha Mora Gubha</td>
+      <td>Nabin Kuanr</td>
+      <td>2</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>É Mentira</td>
+      <td>G.R.C.E.S. Independente</td>
+      <td>2</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Chhire Maa</td>
+      <td>Namita Pattanaik</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>De Onde Venho</td>
+      <td>Sidney Grandi De Morais</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>More Kalia Suna Kalia</td>
+      <td>Namita Pattanaik</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>O Que Conta No Faz de Conta (feat. Felismino Soares Dos Anjos (Pê Santana)</td>
+      <td>Rafael Pereira de Sousa (Rafael Pinah)</td>
+      <td>1</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>A Cigana</td>
+      <td>Sidney Grandi De Morais</td>
+      <td>0</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table><h3>Sertanejo</h3><table border="1" class="dataframe styled-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Rank</th>
+      <th>Música</th>
+      <th>Artista</th>
+      <th>Popularidade</th>
+      <th>Data da Coleta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Escondendo o Ouro - Ao Vivo</td>
+      <td>Zé Neto & Cristiano</td>
+      <td>82</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Amigo Da Minha Saudade - Ao Vivo</td>
+      <td>Henrique & Juliano</td>
+      <td>80</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Cantada Boba - Ao Vivo</td>
+      <td>Jorge & Mateus</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Grau de Maluca - Ao Vivo</td>
+      <td>Guilherme & Benuto</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Grau de Maluca - Ao Vivo</td>
+      <td>Matheus Fernandes</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Mulher Sem Ciúme - Ao Vivo</td>
+      <td>Murilo Huff</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Resumindo - Ao Vivo</td>
+      <td>Zé Neto & Cristiano</td>
+      <td>79</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Entregador de Flor - Ao Vivo em Brasília</td>
+      <td>Diego & Victor Hugo</td>
+      <td>78</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>De Trás Pra Frente - Ao Vivo</td>
+      <td>Henrique & Juliano</td>
+      <td>77</td>
+      <td>2025-08-26</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Lapada Dela - Ao Vivo</td>
+      <td>Matheus Fernandes</td>
+      <td>77</td>
+      <td>2025-08-26</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+    </body>
+    </html>
+    

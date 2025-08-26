@@ -282,6 +282,48 @@ def buscar_artistas_por_genero(genero: str, token: str, limit: int = 10, page_si
     return collected[:limit]
 
 
+def buscar_artistas_por_playlist(keyword: str, token: str, artist_limit: int = 10) -> List[dict]:
+    """Busca artistas extraindo-os de playlists populares que correspondem a uma palavra-chave."""
+    headers = {'Authorization': f'Bearer {token}'}
+    # 1. Buscar playlists com a palavra-chave
+    logger.info('Buscando playlists com a palavra-chave: %s', keyword)
+    search_url = f'https://api.spotify.com/v1/search?q={keyword.replace(" ", "+")}&type=playlist&limit=5'
+    resp = _request_with_retry(method='get', url=search_url, headers=headers)
+    if not resp or resp.status_code != 200:
+        logger.warning('Não foi possível buscar playlists para a palavra-chave: %s', keyword)
+        return []
+
+    playlists = resp.json().get('playlists', {}).get('items', [])
+    if not playlists:
+        logger.warning('Nenhuma playlist encontrada para: %s', keyword)
+        return []
+
+    # 2. Usar a primeira playlist (geralmente a mais relevante) para extrair tracks
+    playlist_id = playlists[0]['id']
+    logger.info('Extraindo artistas da playlist ID: %s (%s)', playlist_id, playlists[0]['name'])
+    tracks_url = f'https://api.spotify.com/v1/playlists/{playlist_id}/tracks'
+    resp = _request_with_retry(method='get', url=tracks_url, headers=headers)
+    if not resp or resp.status_code != 200:
+        logger.warning('Não foi possível obter tracks da playlist ID: %s', playlist_id)
+        return []
+
+    # 3. Compilar uma lista de artistas únicos a partir das tracks
+    tracks = resp.json().get('items', [])
+    artistas_encontrados = {}
+    for item in tracks:
+        if not item.get('track') or not item['track'].get('artists'):
+            continue
+        for artist_obj in item['track']['artists']:
+            if artist_obj and artist_obj.get('id'):
+                artistas_encontrados[artist_obj['id']] = artist_obj
+
+    # Retornar a lista de artistas únicos, respeitando o limite
+    lista_final = list(artistas_encontrados.values())
+    logger.info('Encontrados %d artistas únicos da playlist. Retornando até %d.', len(lista_final), artist_limit)
+    return lista_final[:artist_limit]
+
+
+
 def buscar_top_tracks(artist_id: str, token: str, market: str = 'BR') -> List[dict]:
     url = f'https://api.spotify.com/v1/artists/{artist_id}/top-tracks?market={market}'
     headers = {'Authorization': f'Bearer {token}'}
@@ -406,7 +448,19 @@ def coletar_por_genero(genero: str = GENERO, qtd_artistas: int = QTD_ARTISTAS, m
     cid = str(CLIENT_ID or os.getenv('SPOTIFY_CLIENT_ID') or '')
     csecret = str(CLIENT_SECRET or os.getenv('SPOTIFY_CLIENT_SECRET') or '')
     token = autenticar_spotify(cid, csecret)
+    
+    # Tenta a busca direta por gênero primeiro
     artistas = buscar_artistas_por_genero(genero, token, limit=qtd_artistas)
+
+    # Se a busca por gênero falhar, tenta a nova estratégia por playlist
+    if not artistas:
+        logger.warning("Busca por gênero não retornou artistas. Tentando estratégia de busca por playlist.")
+        artistas = buscar_artistas_por_playlist(genero, token, artist_limit=qtd_artistas)
+
+    if not artistas:
+        logger.error("Nenhum artista encontrado para o gênero '%s' com ambas as estratégias. Abortando.", genero)
+        return []
+
     # load checkpoint
     checkpoint = load_checkpoint(genero)
     processed_ids = set(checkpoint.get('processed_artists', []))
